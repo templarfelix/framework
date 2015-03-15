@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>br.com.streamsoft.framework</groupId>
+        <artifactId>framework-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>br.com.streamsoft.framework</groupId>
+    <artifactId>framework-parent-web</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Framework-Parent-WEB</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven.war.plugin.version}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- FRAMEWORK LIBS -->
+        <dependency>
+            <groupId>br.com.streamsoft.framework</groupId>
+            <artifactId>base-web</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
+        <!-- EFORM -->
+        <dependency>
+            <groupId>br.com.streamsoft.framework</groupId>
+            <artifactId>form-ejb</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.streamsoft.framework</groupId>
+            <artifactId>form-web</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.streamsoft.framework</groupId>
+            <artifactId>security</artifactId>
+            <type>ejb</type>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.streamsoft.framework</groupId>
+            <artifactId>layout</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- END FRAMEWORK LIBS -->
+
+        <!-- J2EE DEPENDENCYS -->
+        <dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-all-6.0</artifactId>
+            <type>pom</type>
+            <version>3.0.2.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jackson-provider</artifactId>
+            <version>2.3.0.GA</version>
+        </dependency>
+
+        <!-- FIXME VALIDAR -->
+        <dependency>
+            <groupId>org.picketbox</groupId>
+            <artifactId>picketbox</artifactId>
+            <version>4.0.5.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        
+    </dependencies>
+
+</project>

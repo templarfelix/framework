@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Framework" default="install-all" basedir=".">
+
+    <property environment="env"/>
+    <property file="build.properties"/>
+
+    <condition property="mvn.exec" value="mvn.bat" else="mvn">
+        <os family="windows"/>
+    </condition>
+
+    <target name="install-all">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean install"/>
+        </exec>
+    </target>
+
+    <target name="install-parent">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean install -pl 'parent' -am"/>
+        </exec>
+    </target>
+
+    <target name="install-all-offline">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean install -o"/>
+        </exec>
+    </target>
+
+    <target name="install-all-update-plugins">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean install -U -up"/>
+        </exec>
+    </target>
+
+    <target name="clean">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean"/>
+        </exec>
+    </target>
+
+    <target name="eclipse:eclipse">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="eclipse:eclipse"/>
+        </exec>
+    </target>
+
+    <target name="eclipse:clean">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="eclipse:clean"/>
+        </exec>
+    </target>
+
+    <target name="deploy">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="deploy"/>
+        </exec>
+    </target>
+
+    <target name="java-version">
+        <exec executable="java" dir="." failonerror="true">
+            <arg line="-version"/>
+        </exec>
+    </target>
+
+</project>

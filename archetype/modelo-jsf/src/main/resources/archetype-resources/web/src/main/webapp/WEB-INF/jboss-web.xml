@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATIVA o REALM do OpenAM para Segurança -->
+<jboss-web>
+    <security-domain>AMRealm</security-domain>
+</jboss-web>

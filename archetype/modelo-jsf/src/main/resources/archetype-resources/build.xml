@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${rootArtifactId}" default="deploy" basedir=".">
+
+    <property environment="env"/>
+    <property file="build.properties"/>
+
+    <condition property="mvn.exec" value="mvn.bat" else="mvn">
+        <os family="windows"/>
+    </condition>
+
+    <target name="install-all" description="Compila e instala os artefatos no repositório local.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean install"/>
+        </exec>
+    </target>
+
+    <target name="install-all-production"
+            description="Compila e instala os artefatos no repositório local.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean install -P production"/>
+        </exec>
+    </target>
+
+    <target name="install-all-update-plugins"
+            description="Atualiza os artefatos do projeto, compila e instala os artefatos no repositório local.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean install -U -up"/>
+        </exec>
+    </target>
+
+    <target name="clean" description="Elimina todos os artefatos compilados e limpa o projeto.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean"/>
+        </exec>
+    </target>
+
+    <target name="eclipse:eclipse" description="Gera todos os subprojetos no formato de projeto Java.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="eclipse:eclipse"/>
+        </exec>
+    </target>
+
+    <target name="eclipse:clean" description="Elimina os arquivos de configuração dos subprojetos.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="eclipse:clean"/>
+        </exec>
+    </target>
+
+    <target name="deploy" depends="undeploy"
+            description="Realiza a implantação do projeto no servidor JBoss.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean package jboss-as:deploy "/>
+        </exec>
+    </target>
+
+    <target name="undeploy" description="Remove os arquivos implantados no servidor.">
+        <exec executable="${mvn.exec}" dir="." failonerror="false">
+            <arg line="jboss-as:undeploy "/>
+        </exec>
+    </target>
+
+    <target name="test-ear" description="Realiza os testes no projeto EAR.">
+        <exec executable="${mvn.exec}" dir="." failonerror="true">
+            <arg line="clean test -Parq-jbossas-remote "/>
+        </exec>
+    </target>
+
+    <target name="test-ejb" description="Realiza os testes no projeto EJB.">
+        <exec executable="${mvn.exec}" dir="ejb" failonerror="true">
+            <arg line="clean test -Parq-jbossas-remote "/>
+        </exec>
+    </target>
+
+</project>

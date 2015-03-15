@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com.streamsoft.framework</groupId>
+    <artifactId>archetypes</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>MKS Framework - Archetypes</name>
+
+    <modules>
+        <module>modelo-jsf</module>
+    </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>streamsoft.default</id>
+            <name>Internal Release Repository</name>
+            <url>http://nexus.streamsoft.com.br:8070/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>streamsoft.snapshots</id>
+            <name>Internal Snapshot Repository</name>
+            <url>http://nexus.streamsoft.com.br:8070/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>2.2</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-archetype-plugin</artifactId>
+                <version>2.2</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,28 @@
+Implementar Eform
+Implementar GED
+Implementar BPM
+
+Colocar swagger para documentar.
+
+Adicionar cadastro de menus
+Adicionar cadastro de i18n
+
+
+
+CORRECOES
+
+não esta funcionando
+
+
+@JsonAutoDetect
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+
+CORRIGIR UTILIZANDO ISTO
+https://github.com/jboss-developer/jboss-eap-quickstarts/tree/6.4.x-develop/jax-rs-client
+http://docs.jboss.org/resteasy/docs/3.0.2.Final/userguide/html_single/#d4e1044
+
+** Refazer toda a versao dos poms
+
+Atualizar a versao dos jars do jboss nos poms, pode ser alguma spec errada.
+
+ver pq o fdp do jackson nao funciona as anotacoes

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<archetype-descriptor name="Modelo">
+    <requiredProperties>
+        <requiredProperty key="archetypeVersion">
+            <defaultValue>0.0.1-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="groupId"/>
+        <requiredProperty key="artifactId"/>
+        <requiredProperty key="version">
+            <defaultValue>1.0.0</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true"
+                 encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>build.xml</include>
+                <include>.project</include>
+                <include>readme.txt</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <modules>
+
+        <!-- OK -->
+        <!-- EAR -->
+        <module id="${rootArtifactId}-ear" dir="ear" name="${rootArtifactId}-ear">
+            <fileSets>
+                <fileSet filtered="true"
+                         encoding="UTF-8">
+                    <directory>.</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true"
+                         packaged="false"
+                         encoding="UTF-8">
+                    <directory>src/main/</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
+        <!-- OK -->
+        <!-- EJB -->
+        <module id="${rootArtifactId}-ejb" dir="ejb" name="${rootArtifactId}-ejb">
+            <fileSets>
+
+                <fileSet filtered="true"
+                         encoding="UTF-8">
+                    <directory>.</directory>
+                    <includes>
+                        <include>pom.xml</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true"
+                         packaged="true"
+                         encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true"
+                         packaged="true"
+                         encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>locales/**</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                    <excludes>
+                        <exclude>locales/**</exclude>
+                    </excludes>
+                </fileSet>
+
+                <fileSet filtered="true"
+                         packaged="true"
+                         encoding="UTF-8">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true"
+                         encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
+        <!-- OK -->
+        <!-- REPORT -->
+        <module id="${rootArtifactId}-report"
+                dir="report"
+                name="${rootArtifactId}-report">
+            <fileSets>
+                <fileSet encoding="UTF-8">
+                    <directory>src/main/jasperreports</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
+        <module id="${rootArtifactId}-web"
+                dir="web"
+                name="${rootArtifactId}-web">
+            <fileSets>
+
+                <fileSet encoding="UTF-8"
+                         filtered="true">
+                    <directory>src/main/webapp</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true"
+                         packaged="true"
+                         encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true"
+                         packaged="true"
+                         encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>locales/**</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                    <excludes>
+                        <exclude>locales/**</exclude>
+                    </excludes>
+                </fileSet>
+
+            </fileSets>
+        </module>
+
+
+    </modules>
+</archetype-descriptor>

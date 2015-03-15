@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns="http://www.w3.org/1999/xhtml"
+                template="/template/defaultHtml.xhtml">
+
+    <ui:define name="content">
+
+               
+        <div class="titlePanel">
+            <div class="titlePanelHeader">
+                <h:outputLabel value="#{msg['cadastro.usuario']}"/>
+            </div>
+
+            <div class="conteudo">
+
+                <p:messages styleClass="messages" errorClass="invalid"
+                            infoClass="valid" warnClass="warning" globalOnly="true"/>
+
+                <h:form class="form-horizontal" id="formMain">
+
+                    <div class="control-group">
+                        <h:outputLabel for="id" class="control-label" value="#{msg['id']}:"/>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-lock"></i></span>
+                                <h:inputText id="id"
+                                             disabled="true"
+                                             value="#{userCRUDController.activeItem.id}"
+                                             required="false"/>
+                                <h:message for="id" errorClass="invalid"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h:outputLabel for="email" class="control-label" value="#{msg['email']}:"/>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-envelope"></i></span>
+                                <h:inputText id="email"
+                                             disabled="#{!userCRUDController.activeItem.isNew()}"
+                                             value="#{userCRUDController.activeItem.email}"
+                                             required="true"/>
+                                <p:watermark for="email" value="your@email"/>
+                                <h:message for="email" errorClass="invalid"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h:outputLabel for="name" class="control-label" value="#{msg['nome']}:"/>
+                        <div class="controls">
+                            <h:inputText id="name"
+                                         value="#{userCRUDController.activeItem.name}"
+                                         required="true"/>
+                            <h:message for="name" errorClass="invalid"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h:outputLabel class="control-label" for="birthDay"
+                                       value="#{msg['aniversario']}:"/>
+                        <div class="controls input-append">
+                            <p:calendar pattern="#{msg['formato.data']}"
+                                        value="#{userCRUDController.activeItem.birthDay}"
+                                        id="birthDay" showOn="button" required="true"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h:outputLabel for="password" class="control-label"
+                                       value="#{msg['senha']}:"/>
+                        <div class="controls">
+                            <h:inputSecret id="password" name="password"
+                                           value="#{userCRUDController.activeItem.password}"
+                                           requiredMessage="Informe a sua senha." required="required"/>
+                            <h:message for="password" errorClass="invalid"/>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <p:commandButton id="save" styleClass="btn btn-small btn-primary"
+                                         action="#{userCRUDController.persist}" ajax="false"
+                                         value="#{msg['salvar']}" icon="icon-ok icon-white"/>
+
+                        <p:spacer width="10px"/>
+
+                        <p:commandButton id="btBack" value="#{msg['cancelar']}"
+                                         action="#{userCRUDController.cancelForm}"
+                                         styleClass="btn btn-small"
+                                         icon="icon-ban-circle"
+                                         process="@this"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

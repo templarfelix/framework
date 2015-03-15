@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com.streamsoft.framework</groupId>
+    <artifactId>framework</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Framework</name>
+
+    <modules>
+        <module>archetype</module>
+        <module>parent</module>
+
+
+        <!-- FIXME CRIAR PROJETO
+        <module>base-entity</module>
+        -->
+        <module>base-web</module>
+        <module>base-ejb</module>
+
+        <!-- FIXME CRIAR PROJETO
+        <module>base-report</module>
+        -->
+
+        <module>security</module>
+
+        <module>layout</module>
+
+        <!-- PROGRESS 
+        <module>progress</module>
+		-->
+    </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>streamsoft.default</id>
+            <name>Internal Release Repository</name>
+            <url>http://nexus.streamsoft.com.br:8070/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>streamsoft.snapshots</id>
+            <name>Internal Snapshot Repository</name>
+            <url>http://nexus.streamsoft.com.br:8070/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/streamsoft/framework/</connection>
+        <developerConnection>scm:git:https://github.com/streamsoft/framework/</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <prerequisites>
+        <maven>3.1.0</maven>
+    </prerequisites>
+
+    <properties>
+        <!-- PROJECT INFORMATIONS -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.6</java.version>
+
+        <!-- JBOSS -->
+        <version.jboss.bom>1.0.4.Final-redhat-4</version.jboss.bom>
+        <version.jboss.as>7.2.0.Final</version.jboss.as>
+        <version.arquillian>7.2.0.Final</version.arquillian>
+
+        <!-- APIS -->
+        <hibernate.version>4.3.1.Final</hibernate.version>
+        <ejb.version>3.1</ejb.version>
+        <jasperreports.version>5.2.0</jasperreports.version>
+        <pretty.faces.version>3.3.3</pretty.faces.version>
+        <jboss.servlet.spec.version>1.0.0.Beta2</jboss.servlet.spec.version>
+        <smooks.version>1.5.1</smooks.version>
+        <smooks.unedifact.version>1.4</smooks.unedifact.version>
+        <querydsl.version>3.3.2</querydsl.version>
+
+        <!-- TEST -->
+        <junit.version>4.10</junit.version>
+        <!-- PLUGINS -->
+        <jboss.as.maven.plugin.version>7.3.Final</jboss.as.maven.plugin.version>
+        <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+        <maven.war.plugin.version>2.1.1</maven.war.plugin.version>
+        <maven.ear.plugin.version>2.8</maven.ear.plugin.version>
+        <maven.ejb.plugin.version>2.3</maven.ejb.plugin.version>
+        <maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
+        <querydsl.plugin.version>1.0.9</querydsl.plugin.version>
+
+        <!-- FLEX -->
+        <blazeds.version>4.0.0.14931</blazeds.version>
+        <flex.version>4.6.0.23201</flex.version>
+        <flex.tlf.version>2.0.0.232</flex.tlf.version>
+        <flex.osmf.version>1.0.0.16316</flex.osmf.version>
+        <flexlib.version>2.6-M2</flexlib.version>
+        <flexmojos.version>4.0-RC2</flexmojos.version>
+        <flexunit.version>4.0-beta-2</flexunit.version>
+        <spring.flex.version>1.5.2.RELEASE</spring.flex.version>
+        <swiz.version>1.4.0-flex4</swiz.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            
+            
+            <dependency>
+                <groupId>org.jboss.spec</groupId>
+                <artifactId>jboss-javaee-all-6.0</artifactId>
+                <version>3.0.2.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.version}</version>
+                <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator-annotation-processor</artifactId>
+                <version>${hibernate.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-c3p0</artifactId>
+                <version>${hibernate.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>9.1-901.jdbc4</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Test dependencies -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <type>jar</type>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jboss.as.plugins</groupId>
+                    <artifactId>jboss-as-maven-plugin</artifactId>
+                    <version>${jboss.as.maven.plugin.version}</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
