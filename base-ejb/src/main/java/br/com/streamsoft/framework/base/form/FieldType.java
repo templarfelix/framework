@@ -7,7 +7,8 @@ public enum FieldType
 {
 
 	AUTO("auto"),
-	PASSSWORD("password");
+	PASSSWORD("password"),
+	INPUT("INPUT");
 
 	private String type = "auto";
 

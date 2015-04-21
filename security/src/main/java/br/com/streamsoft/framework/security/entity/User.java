@@ -52,7 +52,7 @@ public class User extends LogBaseEntityImpl<Long> implements Serializable
 	@Column(name = "id")
 	private Long id;
 
-	@FormColumn(description = "security_email", label = "security_email_label", placeholder = "security_email_placeholder")
+	@FormColumn(description = "security_email", label = "security_email_label", placeholder = "security_email_placeholder", filter = true, grid = true)
 	@Email
 	@NotNull
 	@NotEmpty
@@ -66,7 +66,7 @@ public class User extends LogBaseEntityImpl<Long> implements Serializable
 	private String name;
 
 	/* 1 = actived, 0 = disabled */
-	@FormColumn(description = "security_name", label = "security_name_label", placeholder = "security_name_placeholder")
+	@FormColumn(description = "security_status", label = "security_status_label", placeholder = "security_name_placeholder")
 	@NotNull
 	@Column(name = "status", length = 1)
 	private Long status;

@@ -3,10 +3,11 @@ package br.com.streamsoft.framework.form.rest;
 import br.com.streamsoft.framework.base.entity.BaseEntity;
 import br.com.streamsoft.framework.base.form.FormColumn;
 import br.com.streamsoft.framework.base.rest.BaseREST;
+import br.com.streamsoft.framework.form.generator.ColumnField;
+import br.com.streamsoft.framework.form.generator.FilterField;
 import br.com.streamsoft.framework.form.generator.FormField;
 
 import javax.inject.Inject;
-import javax.persistence.Column;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
@@ -14,7 +15,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
@@ -34,13 +34,64 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 	@Path("/getFilter")
 	@Produces(MediaType.APPLICATION_JSON)
 	/**
-	 * TODO escrever o json que devolvera os campos de filtro
-	 *
 	 * */
-	public List<FormField> getFilter()
+	public List<FilterField> getFilter()
 	{
+		List<FilterField> filterFields = new ArrayList<FilterField>();
 
-		return null;
+		Class current = getEntityClass();
+
+		for (Field field : current.getDeclaredFields())
+		{
+			if (field.isAnnotationPresent(FormColumn.class))
+			{
+				// pega as informações da anotação
+				FormColumn fieldInfoAnnotation = field
+						.getAnnotation(FormColumn.class);
+				if (fieldInfoAnnotation.filter())
+				{
+					FilterField filterField = new FilterField();
+					filterField.setName(fieldInfoAnnotation.label());
+					filterField.setKey(field.getName());
+					filterField.setPlaceholder(fieldInfoAnnotation.placeholder());
+
+					filterFields.add(filterField);
+				}
+			}
+		}
+
+		return filterFields;
+	}
+
+	@GET
+	@Path("/getColumn")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<ColumnField> getColumn()
+	{
+		List<ColumnField> columnFields = new ArrayList<ColumnField>();
+
+		Class current = getEntityClass();
+
+		for (Field field : current.getDeclaredFields())
+		{
+			if (field.isAnnotationPresent(FormColumn.class))
+			{
+				// pega as informações da anotação
+				FormColumn fieldInfoAnnotation = field
+						.getAnnotation(FormColumn.class);
+				if (fieldInfoAnnotation.grid())
+				{
+					ColumnField filterField = new ColumnField();
+					filterField.setName(fieldInfoAnnotation.label());
+					filterField.setKey(field.getName());
+					filterField.setPlaceholder(fieldInfoAnnotation.placeholder());
+
+					columnFields.add(filterField);
+				}
+			}
+		}
+
+		return columnFields;
 	}
 
 	@GET
@@ -52,6 +103,10 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 	 * FIXME criar metodos para montar os campos privados facilitando chamar a logica
 	 *
 	 * */
+
+	// FIXME REFATORAR PARA A VERSAO NOVA DO ANGLY
+	// http://formly-js.github.io/angular-formly/#/
+	//https://github.com/formly-js/angular-formly
 	public List<FormField> getForm() throws Exception
 	{
 		// make form
@@ -59,46 +114,28 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 
 		Class current = getEntityClass();
 
-		log.info("currentClass=" + current.getName());
-
 		for (Field field : current.getDeclaredFields())
 		{
-			log.info("field=" + field);
-
-			// teste
-			for (Annotation an : field.getDeclaredAnnotations())
-			{
-				log.info("Annotation=" + an.toString());
-			}
-
 			if (field.isAnnotationPresent(FormColumn.class))
 			{
-				log.info("field=" + field);
-
 				// pega as informações da anotação
 				FormColumn fieldInfoAnnotation = field
 						.getAnnotation(FormColumn.class);
 
-				log.info(fieldInfoAnnotation.toString());
-
 				FormField formField = new FormField();
 				formField.setKey(field.getName());
-				formField.setDescription(fieldInfoAnnotation.description());
-				formField.setLabel(fieldInfoAnnotation.label());
+				formField.getTemplateOptions().setLabel(fieldInfoAnnotation.label());
 
-				formField.setDisabled(fieldInfoAnnotation.disabled());
-
-				log.info("TYPE=" + field.getType().getTypeName());
-
-				// types by annotation
-				//if (field.isAnnotationPresent(org.hibernate.validator.constraints.Email.class)) {}
+				//FIXME DESCONTINUADO ??
+				//formField.setDescription(fieldInfoAnnotation.description());
+				//formField.getTemplateOptions().setDisabled(fieldInfoAnnotation.disabled());
 
 				// type by class
-				if (field.getType().getTypeName().equals("java.lang.String"))
+				if (field.getType().getName().equals("java.lang.String"))
 				{
 					makeTextField(formField);
 				}
-				else if (field.getType().getTypeName().equals("java.lang.Long"))
+				else if (field.getType().getName().equals("java.lang.Long"))
 				{
 					makeNumberField(formField);
 				}
@@ -109,20 +146,20 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 				if (field.isAnnotationPresent(Size.class))
 				{
 					Size size = field.getAnnotation(Size.class);
-					formField.setMax(Long.valueOf(size.max()));
-					formField.setMin(Long.valueOf(size.min()));
+					formField.getTemplateOptions().setMax(Long.valueOf(size.max()));
+					formField.getTemplateOptions().setMin(Long.valueOf(size.min()));
 				}
 				else
 				{
 					if (field.isAnnotationPresent(Min.class))
 					{
 						Min min = field.getAnnotation(Min.class);
-						formField.setMin(min.value());
+						formField.getTemplateOptions().setMin(min.value());
 					}
 					if (field.isAnnotationPresent(Max.class))
 					{
 						Max max = field.getAnnotation(Max.class);
-						formField.setMax(max.value());
+						formField.getTemplateOptions().setMax(max.value());
 					}
 				}
 
@@ -130,8 +167,6 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 			}
 		}
 		// finish
-
-		log.info("formFields = " + formFields.toString());
 
 		return formFields;
 	}
@@ -141,8 +176,7 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 	 */
 	private FormField makeTextField(FormField formField)
 	{
-		log.info("text");
-		formField.setType("text");
+		formField.setType("input");
 
 		return formField;
 	}
@@ -152,8 +186,8 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 	 */
 	private FormField makeNumberField(FormField formField)
 	{
-		log.info("number");
-		formField.setType("number");
+		formField.setType("input");
+		formField.getTemplateOptions().setType("number");
 
 		return formField;
 	}

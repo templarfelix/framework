@@ -37,20 +37,6 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-
-        <!-- EFORM -->
-        <dependency>
-            <groupId>br.com.streamsoft.framework</groupId>
-            <artifactId>form-ejb</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>br.com.streamsoft.framework</groupId>
-            <artifactId>form-web</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
         <dependency>
             <groupId>br.com.streamsoft.framework</groupId>
             <artifactId>security</artifactId>

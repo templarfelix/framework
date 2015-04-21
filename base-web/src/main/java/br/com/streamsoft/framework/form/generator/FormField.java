@@ -1,10 +1,10 @@
 package br.com.streamsoft.framework.form.generator;
 
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Fernando on 16/12/2014.
@@ -16,37 +16,23 @@ public class FormField implements Serializable
 	private String key;
 	// FIXME TRANSFORMAR EM ENUM
 	private String type;
-	private String label;
-	private String placeholder;
-	private Boolean required;
-	private Boolean disabled;
-	private String description;
 
-	// CRIAR EXEMPLO
-	private String hideExpression;
+	private TemplateOptions templateOptions = new TemplateOptions();
 
-	private ModelOptions modelOptions;
+	private Map<String, String> expressionProperties;
 
-	// type textArea
-	private Integer lines;
+	private Map<String, String> validators;
 
-	// type radio
-	@JsonProperty("options")
-	private List<RadioOptions> options;
+	private Map<String, Object> validation;
 
-	// type number
-	@JsonProperty("min")
-	private Long min;
-
-	@JsonProperty("max")
-	private Long max;
-
-	@JsonProperty("options")
-	private List<SelectOtions> selectOtptions;
-
-	//FIXME ESCREVER CUSTOM COMPONENTS
-
-	//FIXME ESCREVER DEMAIS PROPRIEDADES
+	/*
+	"optionsTypes": [
+      "ipAddress"
+    ],
+    * optionsTypes
+	* optionsTypes: ['checked'],
+    */
+	private List<Object> optionsTypes;
 
 	public String getKey()
 	{
@@ -68,123 +54,53 @@ public class FormField implements Serializable
 		this.type = type;
 	}
 
-	public String getLabel()
+	public TemplateOptions getTemplateOptions()
 	{
-		return label;
+		return templateOptions;
 	}
 
-	public void setLabel(String label)
+	public void setTemplateOptions(TemplateOptions templateOptions)
 	{
-		this.label = label;
+		this.templateOptions = templateOptions;
 	}
 
-	public String getPlaceholder()
+	public Map<String, String> getExpressionProperties()
 	{
-		return placeholder;
+		return expressionProperties;
 	}
 
-	public void setPlaceholder(String placeholder)
+	public void setExpressionProperties(Map<String, String> expressionProperties)
 	{
-		this.placeholder = placeholder;
+		this.expressionProperties = expressionProperties;
 	}
 
-	public Boolean getRequired()
+	public Map<String, String> getValidators()
 	{
-		return required;
+		return validators;
 	}
 
-	public void setRequired(Boolean required)
+	public void setValidators(Map<String, String> validators)
 	{
-		this.required = required;
+		this.validators = validators;
 	}
 
-	public Boolean getDisabled()
+	public Map<String, Object> getValidation()
 	{
-		return disabled;
+		return validation;
 	}
 
-	public void setDisabled(Boolean disabled)
+	public void setValidation(Map<String, Object> validation)
 	{
-		this.disabled = disabled;
+		this.validation = validation;
 	}
 
-	public String getDescription()
+	public List<Object> getOptionsTypes()
 	{
-		return description;
+		return optionsTypes;
 	}
 
-	public void setDescription(String description)
+	public void setOptionsTypes(List<Object> optionsTypes)
 	{
-		this.description = description;
-	}
-
-	public String getHideExpression()
-	{
-		return hideExpression;
-	}
-
-	public void setHideExpression(String hideExpression)
-	{
-		this.hideExpression = hideExpression;
-	}
-
-	public ModelOptions getModelOptions()
-	{
-		return modelOptions;
-	}
-
-	public void setModelOptions(ModelOptions modelOptions)
-	{
-		this.modelOptions = modelOptions;
-	}
-
-	public Integer getLines()
-	{
-		return lines;
-	}
-
-	public void setLines(Integer lines)
-	{
-		this.lines = lines;
-	}
-
-	public List<RadioOptions> getOptions()
-	{
-		return options;
-	}
-
-	public void setOptions(List<RadioOptions> options)
-	{
-		this.options = options;
-	}
-
-	public Long getMin()
-	{
-		return min;
-	}
-
-	public void setMin(Long min)
-	{
-		this.min = min;
-	}
-
-	public Long getMax()
-	{
-		return max;
-	}
-
-	public void setMax(Long max)
-	{
-		this.max = max;
-	}
-
-	public List<SelectOtions> getSelectOtptions()
-	{
-		return selectOtptions;
-	}
-
-	public void setSelectOtptions(List<SelectOtions> selectOtptions)
-	{
-		this.selectOtptions = selectOtptions;
+		this.optionsTypes = optionsTypes;
 	}
 }
