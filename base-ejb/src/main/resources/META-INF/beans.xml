@@ -3,13 +3,4 @@
        xsi:schemaLocation="
         http://java.sun.com/xml/ns/javaee 
         http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
-
-    <interceptors>
-        <class>br.com.streamsoft.framework.base.security.interceptor.SecurityInterceptor</class>
-        <class>br.com.streamsoft.framework.base.security.interceptor.LogInterceptor</class>
-        <class>br.com.streamsoft.framework.base.security.interceptor.ExceptionAwareInterceptor</class>
-        <class>br.com.streamsoft.framework.base.security.interceptor.LazyAwareInterceptor</class>
-        <class>br.com.streamsoft.framework.base.security.interceptor.TransactionalInterceptor</class>
-    </interceptors>
-
 </beans>

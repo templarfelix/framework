@@ -51,9 +51,9 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 				if (fieldInfoAnnotation.filter())
 				{
 					FilterField filterField = new FilterField();
-					filterField.setName(fieldInfoAnnotation.label());
+					filterField.setName(fieldInfoAnnotation.label()+" | translate ");
 					filterField.setKey(field.getName());
-					filterField.setPlaceholder(fieldInfoAnnotation.placeholder());
+					filterField.setPlaceholder("(" + fieldInfoAnnotation.placeholder() + "| translate)");
 
 					filterFields.add(filterField);
 				}
@@ -82,9 +82,9 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 				if (fieldInfoAnnotation.grid())
 				{
 					ColumnField filterField = new ColumnField();
-					filterField.setName(fieldInfoAnnotation.label());
+					filterField.setName("(" + fieldInfoAnnotation.label()+" | translate )");
 					filterField.setKey(field.getName());
-					filterField.setPlaceholder(fieldInfoAnnotation.placeholder());
+					filterField.setPlaceholder("(" + fieldInfoAnnotation.placeholder()+" | translate )");
 
 					columnFields.add(filterField);
 				}
@@ -124,7 +124,7 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST
 
 				FormField formField = new FormField();
 				formField.setKey(field.getName());
-				formField.getTemplateOptions().setLabel(fieldInfoAnnotation.label());
+				formField.getTemplateOptions().setLabel("(" + fieldInfoAnnotation.label()+" | translate )");
 
 				//FIXME DESCONTINUADO ??
 				//formField.setDescription(fieldInfoAnnotation.description());

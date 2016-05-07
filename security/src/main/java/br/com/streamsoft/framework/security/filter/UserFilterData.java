@@ -2,10 +2,10 @@ package br.com.streamsoft.framework.security.filter;
 
 import br.com.streamsoft.framework.base.filter.FilterData;
 import br.com.streamsoft.framework.security.entity.QUser;
-import com.mysema.query.BooleanBuilder;
-import com.mysema.query.types.Expression;
-import com.mysema.query.types.OrderSpecifier;
-import com.mysema.query.types.Predicate;
+import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.Expression;
+import com.querydsl.core.types.OrderSpecifier;
+import com.querydsl.core.types.Predicate;
 
 import java.util.ArrayList;
 import java.util.HashMap;

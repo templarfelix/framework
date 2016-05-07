@@ -19,10 +19,6 @@ import java.util.Set;
 @Table(schema = "SECURITY", name = "USER",
 		uniqueConstraints = @UniqueConstraint(columnNames = { "email" }))
 
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="published")
-@DiscriminatorValue(value="true")
-
 @NamedQueries({
 		@NamedQuery(name = "USER.FIND_ALL", query = "SELECT u FROM User u "),
 		@NamedQuery(name = "USER.FIND_BY_ID",

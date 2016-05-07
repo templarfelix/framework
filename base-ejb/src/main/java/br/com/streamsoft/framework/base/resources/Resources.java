@@ -1,9 +1,16 @@
 package br.com.streamsoft.framework.base.resources;
 
+import javax.enterprise.inject.Any;
+import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 /**
@@ -22,17 +29,22 @@ import java.util.logging.Logger;
 public class Resources
 {
 
-	@Produces
-	@PersistenceContext(unitName = "primary")
-	private EntityManager em;
+	//@Produces
+	//@PersistenceContext(unitName = "primary")
+	//@Default
+	//@Any
+	//private EntityManager em;
+
+	//public void closeEntityManager(@Disposes EntityManager em) {
+	//   em.close();
+	//}
 
 	/**
 	 * Obtém o logger.
 	 */
-	@Produces
-	public Logger produceLog(InjectionPoint injectionPoint)
+	@Produces public Logger produceLog(InjectionPoint injectionPoint)
 	{
-		return Logger.getLogger(injectionPoint.getMember().getDeclaringClass()
-				.getName());
+		return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
 	}
+
 }

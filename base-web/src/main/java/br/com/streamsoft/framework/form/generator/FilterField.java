@@ -1,6 +1,6 @@
 package br.com.streamsoft.framework.form.generator;
 
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.io.Serializable;
 

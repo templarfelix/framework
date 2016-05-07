@@ -1,9 +1,10 @@
 package br.com.streamsoft.framework.base.filter;
 
-import com.mysema.query.types.Expression;
-import com.mysema.query.types.OrderSpecifier;
-import com.mysema.query.types.Predicate;
-import com.mysema.query.types.path.EntityPathBase;
+
+import com.querydsl.core.types.Expression;
+import com.querydsl.core.types.OrderSpecifier;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.dsl.EntityPathBase;
 
 import java.util.List;
 import java.util.Map;

@@ -7,7 +7,7 @@ import br.com.streamsoft.framework.base.facade.CrudFacade;
 import br.com.streamsoft.framework.base.filter.FilterData;
 import br.com.streamsoft.framework.base.paging.DataPage;
 import br.com.streamsoft.framework.base.paging.Page;
-import com.mysema.query.types.path.EntityPathBase;
+import com.querydsl.core.types.dsl.EntityPathBase;
 
 import javax.persistence.criteria.CriteriaQuery;
 import javax.validation.ConstraintViolationException;

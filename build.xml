@@ -2,7 +2,6 @@
 <project name="Framework" default="install-all" basedir=".">
 
     <property environment="env"/>
-    <property file="build.properties"/>
 
     <condition property="mvn.exec" value="mvn.bat" else="mvn">
         <os family="windows"/>
@@ -35,18 +34,6 @@
     <target name="clean">
         <exec executable="${mvn.exec}" dir="." failonerror="true">
             <arg line="clean"/>
-        </exec>
-    </target>
-
-    <target name="eclipse:eclipse">
-        <exec executable="${mvn.exec}" dir="." failonerror="true">
-            <arg line="eclipse:eclipse"/>
-        </exec>
-    </target>
-
-    <target name="eclipse:clean">
-        <exec executable="${mvn.exec}" dir="." failonerror="true">
-            <arg line="eclipse:clean"/>
         </exec>
     </target>
 

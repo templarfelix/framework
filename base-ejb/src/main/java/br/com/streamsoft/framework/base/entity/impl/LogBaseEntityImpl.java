@@ -1,6 +1,9 @@
 package br.com.streamsoft.framework.base.entity.impl;
 
 import br.com.streamsoft.framework.base.entity.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -35,7 +35,7 @@ public class SecurityFilterImpl implements SecurityFilter
 	/**
 	 * Init do Security seta os parametros na classe
 	 *
-	 * @param FilterConfig
+	 * @param config
 	 * @return void
 	 */
 	@Override

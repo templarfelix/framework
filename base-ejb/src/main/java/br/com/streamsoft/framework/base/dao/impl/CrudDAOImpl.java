@@ -6,9 +6,10 @@ import br.com.streamsoft.framework.base.entity.impl.BaseEntityImpl;
 import br.com.streamsoft.framework.base.filter.FilterData;
 import br.com.streamsoft.framework.base.paging.DataPage;
 import br.com.streamsoft.framework.base.paging.Page;
-import com.mysema.query.jpa.impl.JPAQuery;
-import com.mysema.query.types.*;
-import com.mysema.query.types.path.EntityPathBase;
+import com.querydsl.core.types.*;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.jpa.JPAQueryBase;
+import com.querydsl.jpa.impl.JPAQuery;
 
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
@@ -41,7 +42,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 	/**
 	 * Find Entity By ID
 	 *
-	 * @param ID
+	 * @param id
 	 * @return T
 	 */
 	@Override
@@ -53,7 +54,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 	/**
 	 * Persist Entity
 	 *
-	 * @param T
+	 * @param obj
 	 * @return T
 	 */
 	@Override
@@ -82,7 +83,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 	/**
 	 * Remove Entity
 	 *
-	 * @param T
+	 * @param t
 	 * @return void
 	 */
 	public void remove(T t) throws ValidationException, ConstraintViolationException, DaoException
@@ -199,7 +200,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 	}
 
 	/**
-	 * {@link CrudDAO#find(String, Page)}
+	 * {@link CrudDAO#find(String, String, Page)}
 	 */
 	@Override
 	public DataPage<T> find(String hql, String countHql, Page page)
@@ -223,7 +224,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 	/**
 	 * Find List Entities By NamedQuery
 	 *
-	 * @param String
+	 * @param namedQuery
 	 * @return List<T>
 	 */
 	@Override
@@ -485,7 +486,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 		em.flush();
 	}
 
-	protected JPAQuery from(EntityPath<?> entityPaths)
+	protected JPAQueryBase from(EntityPath<?> entityPaths)
 	{
 		return new JPAQuery(em).from(entityPaths);
 	}
@@ -498,7 +499,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 	public DataPage<T> findQ(Q qEnt, Predicate pred, Page page, List<Expression<?>> expLst,
 			OrderSpecifier<?>[] order)
 	{
-		JPAQuery query = from(qEnt);
+		JPAQuery query = (JPAQuery) from(qEnt);
 
 		setJoinFetchInQuery(query, expLst);
 
@@ -512,8 +513,8 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 			query.orderBy(order);
 		}
 
-		List<T> result = query.list(qEnt);
-		Number count = query.count();
+		List<T> result = query.fetch();
+		Number count = query.fetchCount();
 
 		DataPage<T> dataPage = new DataPage<T>(result, count, page);
 
@@ -534,20 +535,20 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 
 	public List<T> findQ(Q qEnt, Predicate pred, List<Expression<?>> expLst)
 	{
-		JPAQuery query = from(qEnt);
+		JPAQuery query = (JPAQuery) from(qEnt);
 
 		setJoinFetchInQuery(query, expLst);
 
 		query.where(pred);
 
-		List<T> result = query.list(qEnt);
+		List<T> result = query.fetch();
 
 		return result;
 	}
 
 	public DataPage<T> findQ(Q qEnt, FilterData<Q> filter, Page page)
 	{
-		JPAQuery query = from(qEnt);
+		JPAQuery query = (JPAQuery) from(qEnt);
 
 		setJoinFetchInQuery(query, filter.getJoinFetchQ(qEnt));
 
@@ -561,8 +562,8 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 			query.orderBy(filter.getOrderByQ(qEnt));
 		}
 
-		List<T> result = query.list(qEnt);
-		Number count = query.count();
+		List<T> result = query.fetch();
+		Number count = query.fetchCount();
 
 		DataPage<T> dataPage = new DataPage<T>(result, count, page);
 
@@ -571,7 +572,7 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 
 	public List<T> findQ(Q qEnt, FilterData<Q> filter)
 	{
-		JPAQuery query = from(qEnt);
+		JPAQuery query = (JPAQuery) from(qEnt);
 
 		setJoinFetchInQuery(query, filter.getJoinFetchQ(qEnt));
 
@@ -582,12 +583,12 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 			query.orderBy(filter.getOrderByQ(qEnt));
 		}
 
-		return query.list(qEnt);
+		return query.fetch();
 	}
 
 	public T findSingleQ(Q qEnt, FilterData<Q> filter)
 	{
-		JPAQuery query = from(qEnt);
+		JPAQuery query = (JPAQuery) from(qEnt);
 
 		setJoinFetchInQuery(query, filter.getJoinFetchQ(qEnt));
 
@@ -598,20 +599,20 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 			query.orderBy(filter.getOrderByQ(qEnt));
 		}
 
-		T result = query.uniqueResult(qEnt);
+		T result = (T) query.fetchOne();
 
 		return result;
 	}
 
 	public T findSingleQ(Q qEnt, Predicate pred, List<Expression<?>> expLst)
 	{
-		JPAQuery query = from(qEnt);
+		JPAQuery query = (JPAQuery) from(qEnt);
 
 		setJoinFetchInQuery(query, expLst);
 
 		query.where(pred);
 
-		T result = query.uniqueResult(qEnt);
+		T result = (T) query.fetchFirst();
 
 		return result;
 	}
@@ -637,11 +638,11 @@ public abstract class CrudDAOImpl<ID extends Serializable, T extends BaseEntityI
 			{
 				if (exp instanceof EntityPath<?>)
 				{
-					query.leftJoin((EntityPath<?>) exp).fetch();
+					query.leftJoin((EntityPath<?>) exp).fetchJoin();
 				}
 				if (exp instanceof CollectionExpression<?, ?>)
 				{
-					query.leftJoin((CollectionExpression<?, ?>) exp).fetch();
+					query.leftJoin((CollectionExpression<?, ?>) exp).fetchJoin();
 				}
 			}
 		}
