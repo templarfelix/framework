@@ -72,22 +72,20 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <distributionManagement>
+	<distributionManagement>
         <repository>
-            <id>streamsoft.default</id>
-            <name>Internal Release Repository</name>
-            <url>http://nexus.streamsoft.com.br:8070/nexus/content/repositories/releases/</url>
+            <id>myMavenRepo.write</id>
+            <url>https://mymavenrepo.com/repo/iSsguZZpSfCaJ8935qI5/</url>
         </repository>
         <snapshotRepository>
-            <id>streamsoft.snapshots</id>
-            <name>Internal Snapshot Repository</name>
-            <url>http://nexus.streamsoft.com.br:8070/nexus/content/repositories/snapshots/</url>
+            <id>myMavenRepo.write</id>
+            <url>https://mymavenrepo.com/repo/iSsguZZpSfCaJ8935qI5/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/streamsoft/framework/</connection>
-        <developerConnection>scm:git:https://github.com/streamsoft/framework/</developerConnection>
+        <connection>scm:git:https://github.com/templarfelix/framework/</connection>
+        <developerConnection>scm:git:https://github.com/templarfelix/framework/</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
