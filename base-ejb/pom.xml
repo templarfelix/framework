@@ -186,6 +186,13 @@
             <version>1.3.7</version>
         </dependency>
 
+        <!-- ADICIONADO EM 23/01/2017 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.12</version>
+        </dependency>
+
 
     </dependencies>
 

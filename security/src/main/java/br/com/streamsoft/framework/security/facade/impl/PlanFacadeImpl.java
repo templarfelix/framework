@@ -12,9 +12,10 @@ import br.com.streamsoft.framework.security.filter.PlanFilterData;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
+import java.util.UUID;
 
 @Named
-public class PlanFacadeImpl extends CrudFacadeImpl<Long, Plan, QPlan> implements
+public class PlanFacadeImpl extends CrudFacadeImpl<UUID, Plan, QPlan> implements
 		PlanFacade
 {
 

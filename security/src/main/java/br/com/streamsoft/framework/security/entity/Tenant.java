@@ -1,9 +1,12 @@
 package br.com.streamsoft.framework.security.entity;
 
 import br.com.streamsoft.framework.base.entity.impl.BaseEntityImpl;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * Created by Fernando on 29/03/2016.
@@ -14,13 +17,15 @@ import java.io.Serializable;
 @NamedQueries({ @NamedQuery(
 		name = "TENANT.FIND_ALL",
 		query = "SELECT u FROM Tenant u ") })
-public class Tenant extends BaseEntityImpl<Long> implements Serializable
+public class Tenant extends BaseEntityImpl<UUID> implements Serializable
 {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long id;
+	@GenericGenerator(name = "uuid-gen", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid-gen")
+	@Type(type="pg-uuid")
+	private UUID id;
 
 	@Column(nullable = false,
 			updatable = false)
@@ -34,13 +39,13 @@ public class Tenant extends BaseEntityImpl<Long> implements Serializable
 	private Long version;
 
 	@Override
-	public Long getId()
+	public UUID getId()
 	{
 		return id;
 	}
 
 	@Override
-	public void setId(Long id)
+	public void setId(UUID id)
 	{
 		this.id = id;
 	}

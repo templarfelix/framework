@@ -16,13 +16,14 @@ import javax.validation.ValidationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Stateless
 // SECURITY
 // @SecurityDomain("SecurityRealm")
 // @RolesAllowed({ "Enabled" })
 // @PermitAll
-public class UserDAOImpl extends CrudDAOImpl<Long, User, QUser> implements UserDAO
+public class UserDAOImpl extends CrudDAOImpl<UUID, User, QUser> implements UserDAO
 {
 
 	private static final long serialVersionUID = 1L;

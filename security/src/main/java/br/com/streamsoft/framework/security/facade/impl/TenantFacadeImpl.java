@@ -12,9 +12,10 @@ import br.com.streamsoft.framework.security.filter.TenantFilterData;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
+import java.util.UUID;
 
 @Named
-public class TenantFacadeImpl extends CrudFacadeImpl<Long, Tenant, QTenant>
+public class TenantFacadeImpl extends CrudFacadeImpl<UUID, Tenant, QTenant>
         implements TenantFacade
 {
 

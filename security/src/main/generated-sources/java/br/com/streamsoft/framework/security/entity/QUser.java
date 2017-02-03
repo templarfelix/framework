@@ -31,7 +31,7 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath email = createString("email");
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final ComparablePath<java.util.UUID> id = createComparable("id", java.util.UUID.class);
 
     public final DateTimePath<java.util.Date> lastLogin = createDateTime("lastLogin", java.util.Date.class);
 

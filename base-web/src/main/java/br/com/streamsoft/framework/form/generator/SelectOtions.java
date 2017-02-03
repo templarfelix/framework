@@ -5,6 +5,8 @@ import java.io.Serializable;
 /**
  * Created by Fernando on 16/12/2014.
  */
+
+// FIXME REMOVER SE NAO USADO
 public class SelectOtions implements Serializable
 {
 	private String name;

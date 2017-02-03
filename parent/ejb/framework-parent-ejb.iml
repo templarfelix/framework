@@ -9,33 +9,34 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="base-ejb" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.12" level="project" />
     <orderEntry type="module" module-name="security" scope="PROVIDED" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun.mail:javax.mail:1.5.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.ejb3:jboss-ejb3-ext-api:2.2.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun.mail:javax.mail:1.5.5.redhat-1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1.1.redhat-5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.ejb3:jboss-ejb3-ext-api:2.2.0.Final-redhat-1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-hikaricp:5.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP-java6:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.4.3" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:9.4-1202-jdbc4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.enterprise:cdi-api:1.2" level="project" />
-    <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.2_spec:1.0.0.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.2_spec:1.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.enterprise:cdi-api:1.2.0.redhat-2" level="project" />
+    <orderEntry type="library" name="Maven: javax.inject:javax.inject:1.0.0.redhat-6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.2_spec:1.0.0.Final-redhat-1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final-redhat-1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.2_spec:1.0.0.Final-redhat-1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate-validator-annotation-processor:5.0.0.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate-core:5.0.8.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate-core:5.0.9.Final-redhat-1" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.18.1-GA" level="project" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss:jandex:2.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate-validator:5.2.4.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate-validator:5.2.4.Final-redhat-1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:1.1.0.Final-redhat-1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.ejb:jboss-ejb-api_3.2_spec:1.0.0.Final" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.ejb:jboss-ejb-api_3.2_spec:1.0.0.Final-redhat-1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final-redhat-1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.querydsl:querydsl-apt:4.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.querydsl:querydsl-codegen:4.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.mysema.codegen:codegen:0.6.8" level="project" />
@@ -55,7 +56,7 @@
     <orderEntry type="library" name="Maven: javax.jdo:jdo-api:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: javax.transaction:jta:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: log4j:log4j:1.2.16" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final-redhat-1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.arquillian.junit:arquillian-junit-container:1.1.11.Final" level="project" />
@@ -80,7 +81,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-spi:2.0.0-alpha-8" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.ogm:hibernate-ogm-mongodb:5.0.0.Alpha1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.ogm:hibernate-ogm-core:5.0.0.Alpha1" level="project" />
-    <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.0.8.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.0.9.Final-redhat-1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.hql:hibernate-hql-parser:1.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr-runtime:3.4" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:stringtemplate:3.2.1" level="project" />
@@ -131,7 +132,7 @@
     <orderEntry type="module-library">
       <library name="Maven: sun.jdk:jconsole:jdk">
         <CLASSES>
-          <root url="jar://C:/ambiente_neomind/_util/jdk1.8.0_77/jre/../lib/jconsole.jar!/" />
+          <root url="jar://C:/ambiente_neomind/_util/jdk1.8.0_91/lib/jconsole.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

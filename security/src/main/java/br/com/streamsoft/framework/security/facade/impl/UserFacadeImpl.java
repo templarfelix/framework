@@ -28,7 +28,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Named
-public class UserFacadeImpl extends CrudFacadeImpl<Long, User, QUser> implements
+public class UserFacadeImpl extends CrudFacadeImpl<UUID, User, QUser> implements
 		UserFacade
 {
 

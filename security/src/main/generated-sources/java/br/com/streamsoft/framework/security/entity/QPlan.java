@@ -28,7 +28,7 @@ public class QPlan extends EntityPathBase<Plan> {
 
     public final StringPath description = createString("description");
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final ComparablePath<java.util.UUID> id = createComparable("id", java.util.UUID.class);
 
     public final StringPath name = createString("name");
 

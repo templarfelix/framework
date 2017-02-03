@@ -8,8 +8,9 @@ import br.com.streamsoft.framework.security.entity.QPlan;
 import br.com.streamsoft.framework.security.filter.PlanFilterData;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface PlanDAO extends CrudDAO<Long, Plan, QPlan>
+public interface PlanDAO extends CrudDAO<UUID, Plan, QPlan>
 {
 
 	// Custom Methods

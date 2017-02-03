@@ -1,6 +1,7 @@
 package br.com.streamsoft.framework.security.entity;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * @author Fernando <fernando@mksdev.com>
@@ -11,7 +12,7 @@ public class LoggedUser
 
 	private String sessionID;
 
-	private Long id;
+	private UUID id;
 
 	private String login;
 
@@ -31,12 +32,12 @@ public class LoggedUser
 		this.sessionID = sessionID;
 	}
 
-	public Long getId()
+	public UUID getId()
 	{
 		return id;
 	}
 
-	public void setId(Long id)
+	public void setId(UUID id)
 	{
 		this.id = id;
 	}

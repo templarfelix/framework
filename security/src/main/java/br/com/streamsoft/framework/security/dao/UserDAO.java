@@ -11,8 +11,9 @@ import br.com.streamsoft.framework.security.filter.UserFilterData;
 import javax.validation.ConstraintViolationException;
 import javax.validation.ValidationException;
 import java.util.List;
+import java.util.UUID;
 
-public interface UserDAO extends CrudDAO<Long, User, QUser>
+public interface UserDAO extends CrudDAO<UUID, User, QUser>
 {
 
 	// Custom Methods

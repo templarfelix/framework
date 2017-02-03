@@ -42,7 +42,7 @@
     <orderEntry type="module-library">
       <library name="Maven: sun.jdk:jconsole:jdk">
         <CLASSES>
-          <root url="jar://C:/ambiente_neomind/_util/jdk1.8.0_77/jre/../lib/jconsole.jar!/" />
+          <root url="jar://C:/ambiente_neomind/_util/jdk1.8.0_91/lib/jconsole.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -77,13 +77,13 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.osgi.metadata:jbosgi-metadata:3.0.1.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.xnio:xnio-api:3.2.2.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.xnio:xnio-nio:3.2.2.Final" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final-redhat-1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.marshalling:jboss-marshalling:1.4.6.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.marshalling:jboss-marshalling-river:1.4.6.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.remoting:jboss-remoting:4.0.3.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.remotingjmx:remoting-jmx:2.0.0.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.sasl:jboss-sasl:1.0.4.Final" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.inject:javax.inject:1.0.0.redhat-6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.arquillian.core:arquillian-core-api:1.1.11.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.wildfly:wildfly-build-config:8.1.0.Final" level="project" />
   </component>

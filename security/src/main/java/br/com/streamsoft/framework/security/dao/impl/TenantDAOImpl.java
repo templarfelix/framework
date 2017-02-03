@@ -11,10 +11,11 @@ import br.com.streamsoft.framework.security.filter.TenantFilterData;
 
 import javax.ejb.Stateless;
 import java.util.List;
+import java.util.UUID;
 
 @Stateless
 @Log
-public class TenantDAOImpl extends CrudDAOImpl<Long, Tenant, QTenant> implements TenantDAO
+public class TenantDAOImpl extends CrudDAOImpl<UUID, Tenant, QTenant> implements TenantDAO
 {
 
     private static final long serialVersionUID = 1L;

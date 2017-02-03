@@ -8,8 +8,9 @@ import br.com.streamsoft.framework.security.entity.QPlan;
 import br.com.streamsoft.framework.security.filter.PlanFilterData;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface PlanFacade extends CrudFacade<Long, Plan, QPlan>
+public interface PlanFacade extends CrudFacade<UUID, Plan, QPlan>
 {
 
 	// Custom Methods

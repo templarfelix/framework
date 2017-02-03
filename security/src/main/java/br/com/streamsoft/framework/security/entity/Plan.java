@@ -1,6 +1,8 @@
 package br.com.streamsoft.framework.security.entity;
 
 import br.com.streamsoft.framework.base.entity.impl.LogBaseEntityImpl;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,6 +10,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Entity
 @Table(schema = "SECURITY", name = "PLAN")
@@ -19,7 +22,7 @@ import java.math.BigDecimal;
 				query = "SELECT count(*) FROM Plan S WHERE UPPER(S.name) like UPPER(:name)") })
 // webservice
 @XmlRootElement
-public class Plan extends LogBaseEntityImpl<Long> implements Serializable
+public class Plan extends LogBaseEntityImpl<UUID> implements Serializable
 {
 
 	/**
@@ -29,9 +32,11 @@ public class Plan extends LogBaseEntityImpl<Long> implements Serializable
 
 	/* PK */
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long id;
+	@GenericGenerator(name = "uuid-gen", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid-gen")
+	@Type(type="pg-uuid")
+	private UUID id;
 
 	@NotNull
 	@Size(min = 1, max = 128)
@@ -53,13 +58,13 @@ public class Plan extends LogBaseEntityImpl<Long> implements Serializable
 
 	@Override
 	@Transient
-	public Long getId()
+	public UUID getId()
 	{
 		return id;
 	}
 
 	@Override
-	public void setId(Long id)
+	public void setId(UUID id)
 	{
 		this.id = id;
 	}

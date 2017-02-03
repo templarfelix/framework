@@ -8,8 +8,9 @@ import br.com.streamsoft.framework.security.entity.User;
 import br.com.streamsoft.framework.security.filter.UserFilterData;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface UserFacade extends CrudFacade<Long, User, QUser>
+public interface UserFacade extends CrudFacade<UUID, User, QUser>
 {
 
 	// Custom Methods

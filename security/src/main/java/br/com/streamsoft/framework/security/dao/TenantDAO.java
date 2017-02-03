@@ -8,8 +8,9 @@ import br.com.streamsoft.framework.security.entity.Tenant;
 import br.com.streamsoft.framework.security.filter.TenantFilterData;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface TenantDAO extends CrudDAO<Long, Tenant, QTenant>
+public interface TenantDAO extends CrudDAO<UUID, Tenant, QTenant>
 {
 
     public Tenant findByFilterQ(TenantFilterData filter);

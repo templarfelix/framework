@@ -19,7 +19,7 @@ public class QTenant extends EntityPathBase<Tenant> {
 
     public static final QTenant tenant = new QTenant("tenant");
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final ComparablePath<java.util.UUID> id = createComparable("id", java.util.UUID.class);
 
     public final StringPath name = createString("name");
 

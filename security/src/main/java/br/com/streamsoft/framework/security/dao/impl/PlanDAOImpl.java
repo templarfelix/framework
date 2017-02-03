@@ -12,9 +12,10 @@ import javax.ejb.Stateless;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Stateless
-public class PlanDAOImpl extends CrudDAOImpl<Long, Plan, QPlan> implements PlanDAO
+public class PlanDAOImpl extends CrudDAOImpl<UUID, Plan, QPlan> implements PlanDAO
 {
 
 	private static final long serialVersionUID = 1L;

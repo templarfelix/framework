@@ -7,17 +7,14 @@ import com.querydsl.core.types.Expression;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Predicate;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class UserFilterData implements FilterData<QUser>
 {
 
 	public static final int BY_ID_ASC = 1;
 	public static final int BY_ID_DESC = 2;
-	private Long id;
+	private UUID id;
 	private String email;
 	private String name;
 	private Integer orderBy;
@@ -26,7 +23,7 @@ public class UserFilterData implements FilterData<QUser>
 	{
 	}
 
-	public UserFilterData(Long id)
+	public UserFilterData(UUID id)
 	{
 		this.id = id;
 	}
@@ -101,12 +98,12 @@ public class UserFilterData implements FilterData<QUser>
 		}
 	}
 
-	public Long getId()
+	public UUID getId()
 	{
 		return id;
 	}
 
-	public void setId(Long id)
+	public void setId(UUID id)
 	{
 		this.id = id;
 	}

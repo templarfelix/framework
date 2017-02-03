@@ -8,8 +8,9 @@ import br.com.streamsoft.framework.security.entity.Tenant;
 import br.com.streamsoft.framework.security.filter.TenantFilterData;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface TenantFacade extends CrudFacade<Long, Tenant, QTenant>
+public interface TenantFacade extends CrudFacade<UUID, Tenant, QTenant>
 {
 
     public DataPage<Tenant> findByFilter(TenantFilterData filter, Page page);

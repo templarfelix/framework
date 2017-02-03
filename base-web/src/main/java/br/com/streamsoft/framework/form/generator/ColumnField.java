@@ -2,6 +2,9 @@ package br.com.streamsoft.framework.form.generator;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.Value;
 
 import java.io.Serializable;
 
@@ -10,40 +13,16 @@ import java.io.Serializable;
  */
 // TODO REFATORAR PARA MAIS NECESSIDADES
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class ColumnField implements Serializable
-{
+public class ColumnField implements Serializable {
 
-	private String key;
-	private String placeholder;
-	private String name;
+    @Getter
+    @Setter
+    private String key;
+    @Getter
+    @Setter
+    private String placeholder;
+    @Getter
+    @Setter
+    private String name;
 
-	public String getKey()
-	{
-		return key;
-	}
-
-	public void setKey(String key)
-	{
-		this.key = key;
-	}
-
-	public String getPlaceholder()
-	{
-		return placeholder;
-	}
-
-	public void setPlaceholder(String placeholder)
-	{
-		this.placeholder = placeholder;
-	}
-
-	public String getName()
-	{
-		return name;
-	}
-
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 }
