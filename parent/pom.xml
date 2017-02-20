@@ -52,13 +52,10 @@
     </build>
 
     <profiles>
-
-        <!-- Arquillian WildFly managed profile
+        <!--
+        ANTIGOS
         <profile>
             <id>arq-wildfly-managed</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <dependencies>
                 <dependency>
                     <groupId>org.wildfly</groupId>
@@ -102,20 +99,19 @@
                 </plugins>
             </build>
         </profile>
-        -->
 
-        <!-- Arquillian WildFly remote profile
         <profile>
-            <id>arq-widlfly-remote</id>
+            <id>arq-wildfly-remote</id>
             <dependencies>
                 <dependency>
-                    <groupId>org.wildfly</groupId>
+                    <groupId>org.wildfly.arquillian</groupId>
                     <artifactId>wildfly-arquillian-container-remote</artifactId>
                     <version>${version.org.wildfly}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
         </profile>
+
         -->
 
     </profiles>
