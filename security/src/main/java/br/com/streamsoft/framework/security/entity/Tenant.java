@@ -24,7 +24,7 @@ public class Tenant extends BaseEntityImpl<UUID> implements Serializable
 	@Column(name = "id")
 	@GenericGenerator(name = "uuid-gen", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid-gen")
-	@Type(type="pg-uuid")
+	//@Type(type="pg-uuid")
 	private UUID id;
 
 	@Column(nullable = false,

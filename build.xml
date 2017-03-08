@@ -3,7 +3,7 @@
 
     <property environment="env"/>
 
-    <condition property="mvn.exec" value="mvn.bat" else="mvn">
+    <condition property="mvn.exec" value="mvn.cmd" else="mvn">
         <os family="windows"/>
     </condition>
 

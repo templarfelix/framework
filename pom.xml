@@ -112,7 +112,8 @@
     <!-- PROJECT INFORMATIONS -->
 
     <!-- APIS -->
-    <hibernate.version>5.0.0.Final</hibernate.version>
+    <hibernate.version>5.2.8.Final</hibernate.version>
+    <hibernate.validator.version>5.4.0.Final</hibernate.validator.version>
     <ejb.version>3.1</ejb.version>
     <jasperreports.version>5.2.0</jasperreports.version>
     <pretty.faces.version>3.3.3</pretty.faces.version>
@@ -153,7 +154,7 @@
       <dependency>
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-validator-annotation-processor</artifactId>
-        <version>${hibernate.version}</version>
+        <version>${hibernate.validator.version}</version>
       </dependency>
 
       <dependency>

@@ -51,7 +51,7 @@ public class User extends LogBaseEntityImpl<UUID> implements Serializable {
     @Column(name = "id")
     @GenericGenerator(name = "uuid-gen", strategy = "uuid2")
     @GeneratedValue(generator = "uuid-gen")
-    @Type(type = "pg-uuid")
+    //@Type(type = "pg-uuid")
     @Getter
     @Setter
     private UUID id;
