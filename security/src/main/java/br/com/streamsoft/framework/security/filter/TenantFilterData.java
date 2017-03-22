@@ -6,82 +6,82 @@ import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Expression;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Predicate;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TenantFilterData implements FilterData<QTenant>
-{
+public class TenantFilterData implements FilterData<QTenant> {
 
-    public static final int BY_NAME_ASC = 1;
-    public static final int BY_NAME_DESC = 2;
+  public static final int BY_NAME_ASC = 1;
+  public static final int BY_NAME_DESC = 2;
 
-    private String name;
+  private String name;
 
-    private Integer orderBy;
+  private Integer orderBy;
 
-    public TenantFilterData() {
+  public TenantFilterData() {
 
+  }
+
+  public TenantFilterData(String name) {
+    setName(name);
+  }
+
+  @Override
+  public Map<String, Object> getFilterData() {
+    Map<String, Object> filter = new HashMap<String, Object>();
+    if (getName() != null && !getName().isEmpty()) {
+      filter.put("name", getName());
+    }
+    return filter;
+  }
+
+  @Override
+  public Predicate getParamsQ(QTenant entity) {
+    BooleanBuilder builder = new BooleanBuilder();
+
+    if (getName() != null && !getName().isEmpty()) {
+      builder.and(entity.name.eq(getName()));
     }
 
-    public TenantFilterData(String name) {
-        setName(name);
+    return builder;
+
+  }
+
+  @Override
+  public List<Expression<?>> getJoinFetchQ(QTenant entity) {
+
+    List<Expression<?>> fetchLst = new ArrayList<Expression<?>>();
+
+    return fetchLst;
+  }
+
+  @Override
+  public OrderSpecifier<?> getOrderByQ(QTenant entity) {
+    if (orderBy == null) {
+      return null;
     }
 
-    @Override
-    public Map<String, Object> getFilterData() {
-        Map<String, Object> filter = new HashMap<String, Object>();
-        if (getName() != null && !getName().isEmpty())
-            filter.put("name", getName());
-        return filter;
+    switch (orderBy) {
+      case BY_NAME_ASC:
+        return entity.name.asc();
+      case BY_NAME_DESC:
+        return entity.name.desc();
+      default:
+        return null;
     }
+  }
 
-    @Override
-    public Predicate getParamsQ(QTenant entity) {
-        BooleanBuilder builder = new BooleanBuilder();
+  public String getName() {
+    return name;
+  }
 
-        if (getName() != null && !getName().isEmpty())
-            builder.and(entity.name.eq(getName()));
+  public void setName(String name) {
+    this.name = name;
+  }
 
-        return builder;
-
-    }
-
-    @Override
-    public List<Expression<?>> getJoinFetchQ(QTenant entity) {
-
-        List<Expression<?>> fetchLst = new ArrayList<Expression<?>>();
-
-
-        return fetchLst;
-    }
-
-    @Override
-    public OrderSpecifier<?> getOrderByQ(QTenant entity) {
-        if (orderBy == null)
-            return null;
-
-        switch (orderBy) {
-            case BY_NAME_ASC:
-                return entity.name.asc();
-            case BY_NAME_DESC:
-                return entity.name.desc();
-            default:
-                return null;
-        }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getOrderBy() {
-        return orderBy;
-    }
+  public Integer getOrderBy() {
+    return orderBy;
+  }
 }

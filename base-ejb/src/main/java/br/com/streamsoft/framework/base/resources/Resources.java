@@ -1,17 +1,11 @@
 package br.com.streamsoft.framework.base.resources;
 
-import javax.enterprise.inject.Any;
-import javax.enterprise.inject.Default;
-import javax.enterprise.inject.Disposes;
+import com.codahale.metrics.MetricRegistry;
+import com.codahale.metrics.health.HealthCheckRegistry;
+import java.util.logging.Logger;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 /**
  * Esta classe utiliza CDI para criar aliases de recursos do Java EE nos
@@ -26,25 +20,49 @@ import java.util.logging.Logger;
  * private EntityManager em;
  * </pre>
  */
-public class Resources
-{
+public class Resources {
 
-	//@Produces
-	//@PersistenceContext(unitName = "primary")
-	//@Default
-	//@Any
-	//private EntityManager em;
+  //@Produces
+  //@PersistenceContext(unitName = "primary")
+  //@Default
+  //@Any
+  //private EntityManager em;
 
-	//public void closeEntityManager(@Disposes EntityManager em) {
-	//   em.close();
-	//}
+  //public void closeEntityManager(@Disposes EntityManager em) {
+  //   em.close();
+  //}
 
-	/**
-	 * Obtém o logger.
-	 */
-	@Produces public Logger produceLog(InjectionPoint injectionPoint)
-	{
-		return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
-	}
+  /**
+   * Obtém o logger.
+   */
+  @Produces
+  public Logger produceLog(InjectionPoint injectionPoint) {
+    return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
+  }
 
+  //
+  private static MetricRegistry metricRegistry = new MetricRegistry();
+
+  @Produces
+  @ApplicationScoped
+  private MetricRegistry producesMetricRegistry() {
+    return metricRegistry;
+  }
+
+  public static MetricRegistry getMetricRegistry() {
+    return metricRegistry;
+  }
+
+  //
+  private static HealthCheckRegistry healthCheckRegistry = new HealthCheckRegistry();
+
+  @Produces
+  @ApplicationScoped
+  private HealthCheckRegistry producesHealthCheckRegistry() {
+    return new HealthCheckRegistry();
+  }
+
+  public static HealthCheckRegistry getHealthCheckRegistry() {
+    return healthCheckRegistry;
+  }
 }

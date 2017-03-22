@@ -8,35 +8,30 @@ import br.com.streamsoft.framework.security.entity.Plan;
 import br.com.streamsoft.framework.security.entity.QPlan;
 import br.com.streamsoft.framework.security.facade.PlanFacade;
 import br.com.streamsoft.framework.security.filter.PlanFilterData;
-
-import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.List;
 import java.util.UUID;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 @Named
 public class PlanFacadeImpl extends CrudFacadeImpl<UUID, Plan, QPlan> implements
-		PlanFacade
-{
+    PlanFacade {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	@Inject
-	public PlanFacadeImpl(PlanDAO dao)
-	{
-		super(dao);
-	}
+  @Inject
+  public PlanFacadeImpl(PlanDAO dao) {
+    super(dao);
+  }
 
-	@Override
-	public List<Plan> findAll()
-	{
-		return ((PlanDAO) super.getDAO()).findAll();
-	}
+  @Override
+  public List<Plan> findAll() {
+    return ((PlanDAO) super.getDAO()).findAll();
+  }
 
-	@Override
-	public DataPage<Plan> findByFilter(PlanFilterData filter, Page page)
-	{
-		return ((PlanDAO) super.getDAO()).findByFilter(filter, page);
-	}
+  @Override
+  public DataPage<Plan> findByFilter(PlanFilterData filter, Page page) {
+    return ((PlanDAO) super.getDAO()).findByFilter(filter, page);
+  }
 
 }

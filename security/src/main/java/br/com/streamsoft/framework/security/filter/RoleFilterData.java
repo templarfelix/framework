@@ -2,33 +2,28 @@ package br.com.streamsoft.framework.security.filter;
 
 import java.io.Serializable;
 
-public class RoleFilterData implements Serializable
-{
+public class RoleFilterData implements Serializable {
 
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
 
-	private String role;
+  private String role;
 
-	public RoleFilterData()
-	{
-	}
+  public RoleFilterData() {
+  }
 
-	public RoleFilterData(String role)
-	{
-		this.role = role;
-	}
+  public RoleFilterData(String role) {
+    this.role = role;
+  }
 
-	public String getRole()
-	{
-		return role;
-	}
+  public String getRole() {
+    return role;
+  }
 
-	public void setRole(String role)
-	{
-		this.role = role;
-	}
+  public void setRole(String role) {
+    this.role = role;
+  }
 
 }

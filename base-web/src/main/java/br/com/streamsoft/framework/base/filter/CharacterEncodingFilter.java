@@ -7,7 +7,6 @@ import javax.servlet.Filter;
  *
  * @author André Filippi Cardoso Farias
  */
-public interface CharacterEncodingFilter extends Filter
-{
+public interface CharacterEncodingFilter extends Filter {
 
 }

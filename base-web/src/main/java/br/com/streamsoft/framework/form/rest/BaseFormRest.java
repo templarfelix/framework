@@ -124,7 +124,7 @@ public abstract class BaseFormRest<T extends BaseEntity> extends BaseREST {
           makeTextField(formlyFieldConfig);
         } else if (field.getType().getName().equals("java.lang.Long")) {
           makeNumberField(formlyFieldConfig);
-        } else if(field.getType().getName().equals("java.util.UUID")) {
+        } else if (field.getType().getName().equals("java.util.UUID")) {
           makeIdField(formlyFieldConfig);
         }
 

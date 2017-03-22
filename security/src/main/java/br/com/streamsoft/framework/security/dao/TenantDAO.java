@@ -6,18 +6,16 @@ import br.com.streamsoft.framework.base.paging.Page;
 import br.com.streamsoft.framework.security.entity.QTenant;
 import br.com.streamsoft.framework.security.entity.Tenant;
 import br.com.streamsoft.framework.security.filter.TenantFilterData;
-
 import java.util.List;
 import java.util.UUID;
 
-public interface TenantDAO extends CrudDAO<UUID, Tenant, QTenant>
-{
+public interface TenantDAO extends CrudDAO<UUID, Tenant, QTenant> {
 
-    public Tenant findByFilterQ(TenantFilterData filter);
+  public Tenant findByFilterQ(TenantFilterData filter);
 
-    public DataPage<Tenant> findByFilterQ(TenantFilterData filter, Page page);
+  public DataPage<Tenant> findByFilterQ(TenantFilterData filter, Page page);
 
-    public DataPage<Tenant> zoomQ(TenantFilterData filter, Page page);
+  public DataPage<Tenant> zoomQ(TenantFilterData filter, Page page);
 
-    public List<Tenant> findAll();
+  public List<Tenant> findAll();
 }

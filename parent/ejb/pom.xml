@@ -236,6 +236,18 @@
       <version>1.3.7</version>
     </dependency>
 
+    <!-- ADICIONADO EM 14/03/2017 -->
+    <dependency>
+      <groupId>io.dropwizard.metrics</groupId>
+      <artifactId>metrics-core</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.dropwizard.metrics</groupId>
+      <artifactId>metrics-healthchecks</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+
   </dependencies>
 
   <profiles>

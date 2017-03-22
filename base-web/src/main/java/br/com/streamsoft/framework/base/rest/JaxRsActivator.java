@@ -10,6 +10,6 @@ import javax.ws.rs.core.Application;
  * @version 0.0.1-SNAPSHOT
  */
 @ApplicationPath("/webservices/rest")
-public class JaxRsActivator extends Application
-{
+public class JaxRsActivator extends Application {
+
 }

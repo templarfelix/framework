@@ -6,21 +6,19 @@ import br.com.streamsoft.framework.base.paging.Page;
 import br.com.streamsoft.framework.security.entity.QTenant;
 import br.com.streamsoft.framework.security.entity.Tenant;
 import br.com.streamsoft.framework.security.filter.TenantFilterData;
-
 import java.util.List;
 import java.util.UUID;
 
-public interface TenantFacade extends CrudFacade<UUID, Tenant, QTenant>
-{
+public interface TenantFacade extends CrudFacade<UUID, Tenant, QTenant> {
 
-    public DataPage<Tenant> findByFilter(TenantFilterData filter, Page page);
+  public DataPage<Tenant> findByFilter(TenantFilterData filter, Page page);
 
-    public Tenant findByFilter(TenantFilterData filter);
+  public Tenant findByFilter(TenantFilterData filter);
 
-    public Tenant findById(String id);
+  public Tenant findById(String id);
 
-    public DataPage<Tenant> zoom(TenantFilterData filter, Page page);
+  public DataPage<Tenant> zoom(TenantFilterData filter, Page page);
 
-    public List<Tenant> findAll();
+  public List<Tenant> findAll();
 
 }

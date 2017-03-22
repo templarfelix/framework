@@ -7,39 +7,33 @@ import java.io.Serializable;
  */
 
 // FIXME REMOVER SE NAO USADO
-public class SelectOtions implements Serializable
-{
-	private String name;
-	private String value;
-	private String group;
+public class SelectOtions implements Serializable {
 
-	public String getName()
-	{
-		return name;
-	}
+  private String name;
+  private String value;
+  private String group;
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public String getValue()
-	{
-		return value;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public void setValue(String value)
-	{
-		this.value = value;
-	}
+  public String getValue() {
+    return value;
+  }
 
-	public String getGroup()
-	{
-		return group;
-	}
+  public void setValue(String value) {
+    this.value = value;
+  }
 
-	public void setGroup(String group)
-	{
-		this.group = group;
-	}
+  public String getGroup() {
+    return group;
+  }
+
+  public void setGroup(String group) {
+    this.group = group;
+  }
 }

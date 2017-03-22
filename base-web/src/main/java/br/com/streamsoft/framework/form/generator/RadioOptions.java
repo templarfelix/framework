@@ -5,39 +5,33 @@ import java.io.Serializable;
 /**
  * Created by Fernando on 16/12/2014.
  */
-public class RadioOptions implements Serializable
-{
-	private String name;
-	private String value;
-	private String description;
+public class RadioOptions implements Serializable {
 
-	public String getName()
-	{
-		return name;
-	}
+  private String name;
+  private String value;
+  private String description;
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public String getValue()
-	{
-		return value;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public void setValue(String value)
-	{
-		this.value = value;
-	}
+  public String getValue() {
+    return value;
+  }
 
-	public String getDescription()
-	{
-		return description;
-	}
+  public void setValue(String value) {
+    this.value = value;
+  }
 
-	public void setDescription(String description)
-	{
-		this.description = description;
-	}
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
 }

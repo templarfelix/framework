@@ -9,90 +9,73 @@ import java.util.List;
  * @param <T> DTO para qual foi realizada a pesquisa
  * @author alexandre
  */
-public class DataPage<T> implements Serializable
-{
+public class DataPage<T> implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private List<T> data;
+  private List<T> data;
 
-	private Number count;
+  private Number count;
 
-	private Page page;
+  private Page page;
 
-	/**
-	 * Construtor.
-	 *
-	 * @param data
-	 * @param count
-	 * @param page
-	 */
-	public DataPage(List<T> data, Number count, Page page)
-	{
-		this.data = data;
-		this.count = count;
-		this.page = page;
-	}
+  /**
+   * Construtor.
+   */
+  public DataPage(List<T> data, Number count, Page page) {
+    this.data = data;
+    this.count = count;
+    this.page = page;
+  }
 
-	/**
-	 * @return
-	 */
-	public Page getPage()
-	{
-		return page;
-	}
+  /**
+   * @return
+   */
+  public Page getPage() {
+    return page;
+  }
 
-	/**
-	 * @param page
-	 */
-	public void setPage(Page page)
-	{
-		this.page = page;
-	}
+  /**
+   * @param page
+   */
+  public void setPage(Page page) {
+    this.page = page;
+  }
 
-	/**
-	 * Quantidade total de registros da pesquisa.
-	 *
-	 * @return
-	 */
-	public Number getCount()
-	{
-		return count;
-	}
+  /**
+   * Quantidade total de registros da pesquisa.
+   */
+  public Number getCount() {
+    return count;
+  }
 
-	/**
-	 * Seta a quantidade total de registros da pesquisa.
-	 *
-	 * @param count
-	 */
-	public void setCount(Number count)
-	{
-		this.count = count;
-	}
+  /**
+   * Seta a quantidade total de registros da pesquisa.
+   */
+  public void setCount(Number count) {
+    this.count = count;
+  }
 
-	/**
-	 * @return
-	 */
-	public List<T> getData()
-	{
-		return data;
-	}
+  /**
+   * @return
+   */
+  public List<T> getData() {
+    return data;
+  }
 
-	/**
-	 * @param data
-	 */
-	public void setData(List<T> data)
-	{
-		this.data = data;
-	}
+  /**
+   * @param data
+   */
+  public void setData(List<T> data) {
+    this.data = data;
+  }
 
-	@Override
-	public String toString()
-	{
-		StringBuilder result = new StringBuilder();
-		result.append("count=" + this.count);
-		result.append(", page=[" + this.page + "]");
-		result.append(", data=" + this.data);
-		return result.toString();
-	}
+  @Override
+  public String toString() {
+    StringBuilder result = new StringBuilder();
+    result.append("count=" + this.count);
+    result.append(", page=[" + this.page + "]");
+    result.append(", data=" + this.data);
+    return result.toString();
+  }
 }

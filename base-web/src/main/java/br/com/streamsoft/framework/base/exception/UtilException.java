@@ -1,25 +1,21 @@
 package br.com.streamsoft.framework.base.exception;
 
-public class UtilException extends Exception
-{
-	private static final long serialVersionUID = 1L;
+public class UtilException extends Exception {
 
-	public UtilException()
-	{
-	}
+  private static final long serialVersionUID = 1L;
 
-	public UtilException(String message)
-	{
-		super(message);
-	}
+  public UtilException() {
+  }
 
-	public UtilException(Throwable cause)
-	{
-		super(cause);
-	}
+  public UtilException(String message) {
+    super(message);
+  }
 
-	public UtilException(String message, Throwable cause)
-	{
-		super(message, cause);
-	}
+  public UtilException(Throwable cause) {
+    super(cause);
+  }
+
+  public UtilException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

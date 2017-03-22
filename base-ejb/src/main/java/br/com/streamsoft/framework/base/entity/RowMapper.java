@@ -11,7 +11,7 @@ import java.util.List;
  * @param <T> Tipo de objeto que deve ser retornado pela query.
  * @author André Cardoso
  */
-public interface RowMapper<T>
-{
-	public Collection<T> mapRows(List<Object[]> resultSet);
+public interface RowMapper<T> {
+
+  public Collection<T> mapRows(List<Object[]> resultSet);
 }

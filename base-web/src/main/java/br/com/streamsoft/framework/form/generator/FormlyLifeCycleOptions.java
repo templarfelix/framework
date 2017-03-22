@@ -1,7 +1,6 @@
 package br.com.streamsoft.framework.form.generator;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import java.io.Serializable;
 
 /**
@@ -10,12 +9,12 @@ import java.io.Serializable;
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class FormlyLifeCycleOptions implements Serializable {
 
-    //onInit?: FormlyLifeCycleFn;
-    //onChanges?: FormlyLifeCycleFn;
-    //doCheck?: FormlyLifeCycleFn;
-    //afterContentInit?: FormlyLifeCycleFn;
-    //afterContentChecked?: FormlyLifeCycleFn;
-    //afterViewInit?: FormlyLifeCycleFn;
-    //afterViewChecked?: FormlyLifeCycleFn;
-    //onDestroy?: FormlyLifeCycleFn;
+  //onInit?: FormlyLifeCycleFn;
+  //onChanges?: FormlyLifeCycleFn;
+  //doCheck?: FormlyLifeCycleFn;
+  //afterContentInit?: FormlyLifeCycleFn;
+  //afterContentChecked?: FormlyLifeCycleFn;
+  //afterViewInit?: FormlyLifeCycleFn;
+  //afterViewChecked?: FormlyLifeCycleFn;
+  //onDestroy?: FormlyLifeCycleFn;
 }

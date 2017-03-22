@@ -8,34 +8,32 @@ import br.com.streamsoft.framework.security.dao.TenantDAO;
 import br.com.streamsoft.framework.security.entity.QTenant;
 import br.com.streamsoft.framework.security.entity.Tenant;
 import br.com.streamsoft.framework.security.filter.TenantFilterData;
-
-import javax.ejb.Stateless;
 import java.util.List;
 import java.util.UUID;
+import javax.ejb.Stateless;
 
 @Stateless
 @Log
-public class TenantDAOImpl extends CrudDAOImpl<UUID, Tenant, QTenant> implements TenantDAO
-{
+public class TenantDAOImpl extends CrudDAOImpl<UUID, Tenant, QTenant> implements TenantDAO {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    QTenant qTenant = QTenant.tenant;
+  QTenant qTenant = QTenant.tenant;
 
-    @Override
-    public DataPage<Tenant> findByFilterQ(TenantFilterData filter, Page page) {
-        return super.findQ(qTenant, filter, page);
-    }
+  @Override
+  public DataPage<Tenant> findByFilterQ(TenantFilterData filter, Page page) {
+    return super.findQ(qTenant, filter, page);
+  }
 
-    public Tenant findByFilterQ(TenantFilterData filter) {
-        return super.findSingleQ(qTenant, filter);
-    }
+  public Tenant findByFilterQ(TenantFilterData filter) {
+    return super.findSingleQ(qTenant, filter);
+  }
 
-    public DataPage<Tenant> zoomQ(TenantFilterData filter, Page page) {
-        return super.findQ(qTenant, filter, page);
-    }
+  public DataPage<Tenant> zoomQ(TenantFilterData filter, Page page) {
+    return super.findQ(qTenant, filter, page);
+  }
 
-    public List<Tenant> findAll() {
-        return this.findNamed("TENANT.FIND_ALL");
-    }
+  public List<Tenant> findAll() {
+    return this.findNamed("TENANT.FIND_ALL");
+  }
 }

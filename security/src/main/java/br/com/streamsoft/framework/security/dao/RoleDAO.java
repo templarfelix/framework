@@ -6,17 +6,15 @@ import br.com.streamsoft.framework.base.paging.Page;
 import br.com.streamsoft.framework.security.entity.QRole;
 import br.com.streamsoft.framework.security.entity.Role;
 import br.com.streamsoft.framework.security.filter.RoleFilterData;
-
 import java.util.List;
 
-public interface RoleDAO extends CrudDAO<String, Role, QRole>
-{
+public interface RoleDAO extends CrudDAO<String, Role, QRole> {
 
-	// Custom Methods
-	public List<Role> findAll();
+  // Custom Methods
+  public List<Role> findAll();
 
-	public Role findByRole(String role);
+  public Role findByRole(String role);
 
-	public DataPage<Role> findByFilter(RoleFilterData filter, Page page);
+  public DataPage<Role> findByFilter(RoleFilterData filter, Page page);
 
 }

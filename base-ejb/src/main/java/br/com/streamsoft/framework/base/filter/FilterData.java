@@ -5,7 +5,6 @@ import com.querydsl.core.types.Expression;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.EntityPathBase;
-
 import java.util.List;
 import java.util.Map;
 
@@ -14,14 +13,13 @@ import java.util.Map;
  *
  * @author André Filippi Cardoso Farias
  */
-public interface FilterData<Q extends EntityPathBase<?>>
-{
+public interface FilterData<Q extends EntityPathBase<?>> {
 
-	public Map<String, Object> getFilterData();
+  public Map<String, Object> getFilterData();
 
-	public Predicate getParamsQ(Q entityPath);
+  public Predicate getParamsQ(Q entityPath);
 
-	public List<Expression<?>> getJoinFetchQ(Q entityPath);
+  public List<Expression<?>> getJoinFetchQ(Q entityPath);
 
-	public OrderSpecifier<?> getOrderByQ(Q entityPath);
+  public OrderSpecifier<?> getOrderByQ(Q entityPath);
 }

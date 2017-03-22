@@ -2,13 +2,11 @@ package br.com.streamsoft.framework.form.generator;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Value;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created by Fernando on 16/12/2014.
@@ -16,28 +14,28 @@ import java.util.Map;
 @JsonSerialize(include = Inclusion.NON_EMPTY)
 public class FormlyFieldConfig implements Serializable {
 
-    // key?: string;
-    @Getter
-    @Setter
-    private String key;
+  // key?: string;
+  @Getter
+  @Setter
+  private String key;
 
-    // id?: string;
-    @Getter
-    @Setter
-    private String id;
+  // id?: string;
+  @Getter
+  @Setter
+  private String id;
 
-    // templateOptions?: FormlyTemplateOptions;
-    @Getter
-    @Setter
-    private FormlyTemplateOptions templateOptions = new FormlyTemplateOptions();
+  // templateOptions?: FormlyTemplateOptions;
+  @Getter
+  @Setter
+  private FormlyTemplateOptions templateOptions = new FormlyTemplateOptions();
 
-    // optionsTypes?: any;
-    // FIXME TYAPR CORRETAMENTE
-    @Getter
-    @Setter
-    private List<Object> optionsTypes;
+  // optionsTypes?: any;
+  // FIXME TYAPR CORRETAMENTE
+  @Getter
+  @Setter
+  private List<Object> optionsTypes;
 
-    // FIXME TYAPR CORRETAMENTE
+  // FIXME TYAPR CORRETAMENTE
     /*
     validation?: {
         messages?: {
@@ -48,112 +46,112 @@ public class FormlyFieldConfig implements Serializable {
     };
     * */
 
-    @Getter
-    @Setter
-    private Map<String, Object> validation;
+  @Getter
+  @Setter
+  private Map<String, Object> validation;
 
-    // validators?: any;
-    //FIXME TYAPR CORRETAMENTE
-    @Getter
-    @Setter
-    private Map<String, String> validators;
+  // validators?: any;
+  //FIXME TYAPR CORRETAMENTE
+  @Getter
+  @Setter
+  private Map<String, String> validators;
 
-    // asyncValidators?: any;
-    //FIXME TYAPR CORRETAMENTE
-    @Getter
-    @Setter
-    private Map<String, String> asyncValidators;
+  // asyncValidators?: any;
+  //FIXME TYAPR CORRETAMENTE
+  @Getter
+  @Setter
+  private Map<String, String> asyncValidators;
 
-    // template?: string;
-    @Getter
-    @Setter
-    private String template;
+  // template?: string;
+  @Getter
+  @Setter
+  private String template;
 
-    // component?: any;
-    //FIXME TYAPR CORRETAMENTE
-    @Getter
-    @Setter
-    private String component;
+  // component?: any;
+  //FIXME TYAPR CORRETAMENTE
+  @Getter
+  @Setter
+  private String component;
 
-    // wrapper?: string[] | string;
-    @Getter
-    @Setter
-    private List<String> wrapper;
+  // wrapper?: string[] | string;
+  @Getter
+  @Setter
+  private List<String> wrapper;
 
-    // wrappers?: string[];
-    @Getter
-    @Setter
-    private List<String> wrappers;
+  // wrappers?: string[];
+  @Getter
+  @Setter
+  private List<String> wrappers;
 
-    // fieldGroup?: Array<FormlyFieldConfig>;
-    @Getter
-    @Setter
-    private List<FormlyFieldConfig> fieldGroup;
+  // fieldGroup?: Array<FormlyFieldConfig>;
+  @Getter
+  @Setter
+  private List<FormlyFieldConfig> fieldGroup;
 
-    // fieldArray?: FormlyFieldConfig;
-    @Getter
-    @Setter
-    private List<FormlyFieldConfig> fieldArray;
+  // fieldArray?: FormlyFieldConfig;
+  @Getter
+  @Setter
+  private List<FormlyFieldConfig> fieldArray;
 
-    // hide?: boolean;
-    @Getter
-    @Setter
-    private Boolean hide;
+  // hide?: boolean;
+  @Getter
+  @Setter
+  private Boolean hide;
 
-    // formControl?: AbstractControl;
-    //FIXME TYAPR CORRETAMENTE
-    @Getter
-    @Setter
-    private Object formControl;
+  // formControl?: AbstractControl;
+  //FIXME TYAPR CORRETAMENTE
+  @Getter
+  @Setter
+  private Object formControl;
 
-    // hideExpression?: boolean | string | ((model: any, formState: any) => boolean);
-    @Getter
-    @Setter
-    private String hideExpression;
+  // hideExpression?: boolean | string | ((model: any, formState: any) => boolean);
+  @Getter
+  @Setter
+  private String hideExpression;
 
-    // className?: string;
-    @Getter
-    @Setter
-    private String className;
+  // className?: string;
+  @Getter
+  @Setter
+  private String className;
 
-    // type?: string;
-    // FIXME TRANSFORMAR EM ENUM
-    @Getter
-    @Setter
-    private String type;
+  // type?: string;
+  // FIXME TRANSFORMAR EM ENUM
+  @Getter
+  @Setter
+  private String type;
 
-    // expressionProperties?: any;
-    //FIXME TYAPR CORRETAMENTE
-    @Getter
-    @Setter
-    private Map<String, String> expressionProperties;
+  // expressionProperties?: any;
+  //FIXME TYAPR CORRETAMENTE
+  @Getter
+  @Setter
+  private Map<String, String> expressionProperties;
 
-    // focus?: boolean;
-    @Getter
-    @Setter
-    private Boolean focus;
+  // focus?: boolean;
+  @Getter
+  @Setter
+  private Boolean focus;
 
-    // modelOptions?: any;
-    @Getter
-    @Setter
-    //FIXME TYAPR CORRETAMENTE
-    private Object modelOptions;
+  // modelOptions?: any;
+  @Getter
+  @Setter
+  //FIXME TYAPR CORRETAMENTE
+  private Object modelOptions;
 
-    // lifecycle?: FormlyLifeCycleOptions;
-    @Getter
-    @Setter
-    private FormlyLifeCycleOptions lifecycle;
+  // lifecycle?: FormlyLifeCycleOptions;
+  @Getter
+  @Setter
+  private FormlyLifeCycleOptions lifecycle;
 
-    // defaultValue?: any;
-    @Getter
-    @Setter
-    //FIXME TYAPR CORRETAMENTE
-    private Object defaultValue;
+  // defaultValue?: any;
+  @Getter
+  @Setter
+  //FIXME TYAPR CORRETAMENTE
+  private Object defaultValue;
 
-    // parsers?: [(value: any, index: number) => {}];
-    @Getter
-    @Setter
-    //FIXME TYAPR CORRETAMENTE
-    private Object parsers;
+  // parsers?: [(value: any, index: number) => {}];
+  @Getter
+  @Setter
+  //FIXME TYAPR CORRETAMENTE
+  private Object parsers;
 
 }
