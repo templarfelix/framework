@@ -1,5 +1,6 @@
 package io.eascycm.framework.base.provider;
 
+import io.eascycm.framework.base.resources.Resources;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import java.sql.Connection;
@@ -32,6 +33,8 @@ public class MetricsHikariProvider implements ConnectionProvider, Configurable, 
       LOGGER.debug("Configuring MetricsHikariProvider");
       this.hcfg = HikariConfigurationUtil.loadConfiguration(props);
       this.hds = new HikariDataSource(this.hcfg);
+      this.hds.setHealthCheckRegistry(Resources.getHealthCheckRegistry());
+      this.hds.setMetricRegistry(Resources.getMetricRegistry());
     } catch (Exception var3) {
       throw new HibernateException(var3);
     }

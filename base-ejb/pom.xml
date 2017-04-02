@@ -5,14 +5,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>br.com.streamsoft.framework</groupId>
+    <groupId>io.easycm.framework</groupId>
     <artifactId>framework</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
-  <groupId>br.com.streamsoft.framework</groupId>
+  <groupId>io.easycm.framework</groupId>
   <artifactId>base-ejb</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>Framework - Base EJB</name>

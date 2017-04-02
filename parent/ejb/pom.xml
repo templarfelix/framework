@@ -5,14 +5,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>br.com.streamsoft.framework</groupId>
+    <groupId>io.easycm.framework</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
-  <groupId>br.com.streamsoft.framework</groupId>
+  <groupId>io.easycm.framework</groupId>
   <artifactId>framework-parent-ejb</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <name>Framework-Parent-EJB</name>
@@ -32,16 +32,16 @@
   <dependencies>
     <!-- FRAMEWORK LIBS -->
     <dependency>
-      <groupId>br.com.streamsoft.framework</groupId>
+      <groupId>io.easycm.framework</groupId>
       <artifactId>base-ejb</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.0.0</version>
     </dependency>
 
     <dependency>
-      <groupId>br.com.streamsoft.framework</groupId>
+      <groupId>io.easycm.framework</groupId>
       <artifactId>security</artifactId>
       <type>ejb</type>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.0.0</version>
       <scope>provided</scope>
     </dependency>
 
