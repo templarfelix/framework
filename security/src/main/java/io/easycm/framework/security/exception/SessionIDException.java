@@ -2,7 +2,7 @@ package io.easycm.framework.security.exception;
 
 /**
  * @author Fernando<fernando@mksdev.com>
- * @version 1.0.0-SNAPSHOT
+ * @version 0.0.1-SNAPSHOT-SNAPSHOT
  */
 public class SessionIDException extends Exception {
 

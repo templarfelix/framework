@@ -22,7 +22,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
  * Classe responsável por fazer o filtro de segurança do sistema
  *
  * @author Fernando<fernando@mksdev.com>
- * @version 1.0.0-SNAPSHOT
+ * @version 0.0.1-SNAPSHOT-SNAPSHOT
  */
 public class SecurityFilterImpl implements SecurityFilter {
 

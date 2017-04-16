@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Crud Test Interface
  *
  * @author Fernando <fernando@mksdev.com>
- * @version 0.0.1-SNAPSHOT
+ * @version 0.0.1-SNAPSHOT-SNAPSHOT
  */
 public interface CrudTest<ID extends Serializable, T extends BaseEntity<ID>, Q extends EntityPathBase<T>> {
 

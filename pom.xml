@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.easycm.framework</groupId>
   <artifactId>framework</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Framework</name>
@@ -115,7 +115,7 @@
     <ejb.version>3.1</ejb.version>
     <jasperreports.version>5.2.0</jasperreports.version>
     <pretty.faces.version>3.3.3</pretty.faces.version>
-    <jboss.servlet.spec.version>1.0.0.Beta2</jboss.servlet.spec.version>
+    <jboss.servlet.spec.version>0.0.1-SNAPSHOT.Beta2</jboss.servlet.spec.version>
     <querydsl.version>4.1.0</querydsl.version>
 
     <version.org.apache.commons.commons-lang3>3.4</version.org.apache.commons.commons-lang3>

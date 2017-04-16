@@ -7,12 +7,12 @@
   <parent>
     <groupId>io.easycm.framework</groupId>
     <artifactId>framework</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <groupId>io.easycm.framework</groupId>
   <artifactId>base-web</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Framework - Base WEB</name>
@@ -23,13 +23,13 @@
     <dependency>
       <groupId>io.easycm.framework</groupId>
       <artifactId>base-ejb</artifactId>
-      <version>1.0.0</version>
+      <version>0.0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.easycm.framework</groupId>
       <artifactId>security</artifactId>
-      <version>1.0.0</version>
+      <version>0.0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
 

@@ -5,7 +5,7 @@ import java.util.UUID;
 
 /**
  * @author Fernando <fernando@mksdev.com>
- * @version 0.0.1-SNAPSHOT
+ * @version 0.0.1-SNAPSHOT-SNAPSHOT
  */
 public class LoggedUser {
 

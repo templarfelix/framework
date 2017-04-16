@@ -7,12 +7,12 @@
   <parent>
     <groupId>io.easycm.framework</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <groupId>io.easycm.framework</groupId>
   <artifactId>framework-parent-ear</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Framework-Parent-EAR</name>
@@ -78,7 +78,7 @@
     <dependency>
       <groupId>io.easycm.framework</groupId>
       <artifactId>security</artifactId>
-      <version>1.0.0</version>
+      <version>0.0.1-SNAPSHOT</version>
       <type>ejb</type>
     </dependency>
   </dependencies>

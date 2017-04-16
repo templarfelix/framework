@@ -7,12 +7,12 @@
   <parent>
     <groupId>io.easycm.framework</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <groupId>io.easycm.framework</groupId>
   <artifactId>framework-parent-ejb</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Framework-Parent-EJB</name>
@@ -34,14 +34,14 @@
     <dependency>
       <groupId>io.easycm.framework</groupId>
       <artifactId>base-ejb</artifactId>
-      <version>1.0.0</version>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>io.easycm.framework</groupId>
       <artifactId>security</artifactId>
       <type>ejb</type>
-      <version>1.0.0</version>
+      <version>0.0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
 

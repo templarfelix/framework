@@ -14,7 +14,7 @@ import org.junit.Test;
 
 /**
  * @author Fernando <fernando@mksdev.com>
- * @version 0.0.1-SNAPSHOT
+ * @version 0.0.1-SNAPSHOT-SNAPSHOT
  */
 public abstract class CrudTestImpl<ID extends Serializable, T extends BaseEntityImpl<ID>, Q extends EntityPathBase<T>>
     implements CrudTest<ID, T, Q> {

@@ -7,12 +7,12 @@
   <parent>
     <groupId>io.easycm.framework</groupId>
     <artifactId>framework</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <groupId>io.easycm.framework</groupId>
   <artifactId>progress</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>ejb</packaging>
 
   <name>Framework - Progress</name>
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>io.easycm.framework</groupId>
       <artifactId>base-ejb</artifactId>
-      <version>1.0.0</version>
+      <version>0.0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
 
