@@ -52,6 +52,17 @@
     </pluginManagement>
   </build>
 
+  <distributionManagement>
+    <repository>
+      <id>myMavenRepo.write</id>
+      <url>https://mymavenrepo.com/repo/iSsguZZpSfCaJ8935qI5/</url>
+    </repository>
+    <snapshotRepository>
+      <id>myMavenRepo.write</id>
+      <url>https://mymavenrepo.com/repo/iSsguZZpSfCaJ8935qI5/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <profiles>
     <!--
     ANTIGOS

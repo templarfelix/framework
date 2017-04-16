@@ -44,12 +44,6 @@
       <version>1.0.0</version>
       <scope>provided</scope>
     </dependency>
-
-    <dependency>
-      <groupId>io.easycm.framework</groupId>
-      <artifactId>layout</artifactId>
-      <version>1.0.0</version>
-    </dependency>
     <!-- END FRAMEWORK LIBS -->
 
     <!-- Import the CDI API, we use provided scope as the API is included in JBoss EAP -->
