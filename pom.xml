@@ -80,6 +80,10 @@
       <id>myMavenRepo.write</id>
       <url>https://mymavenrepo.com/repo/iSsguZZpSfCaJ8935qI5/</url>
     </snapshotRepository>
+    <site>
+      <id>myMavenRepo.write</id>
+      <url>https://mymavenrepo.com/repo/iSsguZZpSfCaJ8935qI5/</url>
+    </site>
   </distributionManagement>
 
   <scm>
